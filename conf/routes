@@ -14,3 +14,7 @@ GET     /assets/*file               controllers.Assets.versioned(path="/public",
 
 GET     /news/index                 controllers.NewsController.index
 GET     /database/index             controllers.DatabaseController.index
+
+
+GET     /database/add               controllers.DatabaseController.add
+POST    /database/create            controllers.DatabaseController.create

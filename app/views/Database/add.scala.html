@@ -1,0 +1,30 @@
+@(msg: String)(form1: Form[models.Message])
+
+@main("Sample Page") {
+    <!-- 引数1の内容 -->
+    <h1>@msg</h1>
+    <!-- フォームの作成 -->
+    @helper.form(action = routes.DatabaseController.create){
+
+        <!-- テキスト入力フォームの設置 -->
+        <!-- 入力した値はmail列に保存 -->
+        @(helper.inputText(
+            field = form1("mail")
+        ))
+
+        <!-- テキスト入力フォームの設置 -->
+        <!-- 入力した値はname列に保存 -->
+        @(helper.inputText(
+            field = form1("name")
+        ))
+
+        <!-- テキスト入力エリアフォームの設置 -->
+        <!-- 入力した値はmail列に保存 -->
+        @(helper.textarea(
+            field = form1("message")
+        ))
+
+        <!-- ボタンを押したらページをリロード -->
+        <input type="submit">
+    }
+}
